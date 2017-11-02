@@ -41,23 +41,21 @@ function BrowseFile(source,~,fieldname)
         case 'Ca'
             fid = fopen(fname);
             text = textscan(fid,'%s','Delimiter','\n');
-            fclose(fid);
             text = text{1};
-            sessMarkers = find(~cellfun(@isempty,strfind(text,'began recording.')));
-            sessions = text(sessMarkers);
+            sessions = text(~cellfun(@isempty,strfind(text,'began recording.')));
             for i=1:length(sessions)
                 temp = regexp(sessions{i},' ','split');
                 sessions{i} = temp{end-2};
             end
-            if(~isempty(sessions))
+            if(length(sessions)>0)
                 gui.CaDD.Visible = 'on';
                 gui.CaDD.String = sessions;
             else
                 gui.CaDD.Visible = 'off';
             end
-            tRow = text(sessMarkers(1)-1+find(~cellfun(@isempty,strfind(text(sessMarkers(1):end),'RECORD START:')),1,'first'));
-            tRow = regexprep(tRow,'RECORD START: ','');
-            tString = datestr(datetime(tRow{1},'InputFormat','MMM dd, yyyy hh:mm:ss.SSS a'),formatSpec);
+            tRow = text(~cellfun(@isempty,strfind(text(,'RECORD START:')));
+
+            
             
         otherwise
             sr = seqIo(fname,'reader');

@@ -14,10 +14,10 @@ function SaveTimeFile(source,~)
         str = [str(:); {'Vid2:'};vid2;gui.vid2T.String;{''}];
     end
     if(~isempty(aud))
-        str = [str(:); {'Audio:'};aud;gui.audT.String;{''}];
+        str = [str(:); {'Audio:'}; aud; gui.audDD.String{gui.audDD.Value}; gui.audT.String;{''}];
     end
     if(~isempty(Ca))
-        str = [str(:); {'Ca file:'}; Ca; gui.CaT.String];
+        str = [str(:); {'Ca file:'}; Ca; gui.CaDD.String{gui.CaDD.Value}; gui.CaT.String];
     end
     
     
