@@ -1,7 +1,7 @@
 # Time-Sync
 A small interface for pulling timestamps out of movie, audio, and calcium imaging files, for precise alignment of data.
 
-To use, call `timeSync` from the command line in Matlab. Enter the full path to each file; the text box to the right will display file start times.
+To use, call `timeSync` in Matlab. Enter the full path to each file; the gui will automatically extract and display file start times.
 
 <p align="center">
 <img src=screenshot.png>
