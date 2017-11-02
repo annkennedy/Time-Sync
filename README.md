@@ -10,4 +10,3 @@ To use, call `timeSync` in Matlab. Enter the full path to each file; the gui wil
 ### Notes
 - Calculating timestamps may take a while for some files
 - Currently only compatible with .seq movies
-- Ca imaging timestamps not yet implemented
