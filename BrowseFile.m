@@ -1,4 +1,4 @@
-function BrowseFile(source,~,fieldname)
+function entryWindowBrowse(source,~,fieldname)
     
     gui = guidata(source);
     
